@@ -1,4 +1,6 @@
 pandas
 scikit-learn
-transformers
-konlpy
+transformers #huggingface
+konlpy #(mecab 등)
+kiwipiepy #kiwi 형태소분석기(비교적 최신)
+pynori #nori 형태소분석기(엘라스틱서치)
