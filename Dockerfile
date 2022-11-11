@@ -9,7 +9,13 @@ RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone
 RUN APT_INSTALL="apt-get install -y --no-install-recommends" && \
     apt-get update && \
     DEBIAN_FRONTEND=noninteractive $APT_INSTALL \
-        git 
+        git \
+        # mecab 설치에 필요한 것들
+        g++ \
+        curl \
+        openjdk-8-jdk \
+        make
+RUN curl -s https://raw.githubusercontent.com/konlpy/konlpy/master/scripts/mecab.sh | bash -s
 
 # 쥬피터 노트북 설치 및 환경설정
 RUN conda install jupyter
